@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import resturentSlice from './resturentSlice'
+import restaurantSlice from "./restaurantSlice";
 
-const store=configureStore({
+
+const store = configureStore({
     reducer:{
-        resturentSlice
-
+        restaurantSlice
     }
 })
 

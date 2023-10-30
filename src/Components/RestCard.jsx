@@ -1,18 +1,25 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card';
+import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
-function RestCard({resturent}) {
+
+function RestCard({restaurant}) {
+  console.log(restaurant);
   return (
-    <Card style={{width:"18rem"}}>
-    <Card.Img style={{height:"250px"}} className='rounded p-5' variant="top" src="holder.js/100px180" />
-    <Card.Body>
-      <Card.Title>Card Title</Card.Title>
-      <Card.Text>
-        Some quick example text to build on the card title and make up the
-        bulk of the card's content.
-      </Card.Text>
-    </Card.Body>
-  </Card>
+    <div>
+      <Link to={`/view/${restaurant?.id}`}>
+        <Card>
+        <Card.Img style={{height:'250px'}} className='rounded p-2' variant="top" src={restaurant?.photograph} />
+        <Card.Body>
+          <Card.Title style={{color:'white'}}>{restaurant?.name}</Card.Title>
+          <Card.Text style={{color:'white'}}>
+            <p>Cuisine : {restaurant?.cuisine_type}</p>
+            <p>{restaurant?.neighborhood}</p>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+      </Link>
+    </div>
   )
 }
 
